@@ -11,18 +11,13 @@ cache:
     - $HOME/.npm
     - $HOME/.cache # includes bowers cache
 
-matrix:
-  fast_finish: true
-  allow_failures:
-    - env: EMBER_TRY_SCENARIO=ember-canary
-
 before_install:
   - npm config set spin false
-  - npm install -g bower
+  - npm install -g bower yarn
   - bower --version
 
 install:
-  - npm install
+  - yarn install
   - bower install
 
 script:
