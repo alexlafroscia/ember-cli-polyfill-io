@@ -1,9 +1,11 @@
 {
   "name": "ember-cli-polyfill-io",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Ember CLI addon for including polyfill.io in your Ember application",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "polyfill",
+    "polyfill.io"
   ],
   "license": "MIT",
   "author": "",
@@ -46,9 +48,13 @@
     "mocha": "^3.2.0"
   },
   "engines": {
-    "node": ">= 0.12.0"
+    "node": ">= 6.0.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  }
+  },
+  "files": [
+    "index.js",
+    "lib/index.js"
+  ]
 }
