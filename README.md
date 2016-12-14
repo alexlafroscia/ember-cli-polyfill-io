@@ -37,7 +37,7 @@ module.exports = function() {
       ],
 
       // excludes: features to leave out
-      exludes: [
+      excludes: [
         'Array.prototype.contains'
       ],
 
