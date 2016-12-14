@@ -1,27 +1,60 @@
 # ember-cli-polyfill-io
 
-This README outlines the details of collaborating on this Ember addon.
+[![Build Status](https://travis-ci.org/alexlafroscia/ember-cli-polyfill-io.svg?branch=master)](https://travis-ci.org/alexlafroscia/ember-cli-polyfill-io)
+
+Ember CLI addon for including [`polyfill.io`][polyfill-io] in your Ember application
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-cli-polyfill-io`
-* `npm install`
-* `bower install`
+```bash
+ember install ember-cli-polyfill-io
+```
 
-## Running
+## Configuration
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+You can provide configuration options through the `config/environment.js` file in your Ember app.  The properties align with the [API provided by Polyfill.io][polyfill-docs], so use that for deeper documentation.
 
-## Running Tests
+None of the following options are required, not even an empty `polyfill-io` object; with no configuration, the polyfill will just be injected by itself.
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+```javascript
+module.exports = function() {
+  return {
+    'polyfill-io': {
+      // Custom URL to the polyfill, in case you are self-hosting
+      src: 'https://cdn.mysite.com/assets/polyfill.js',
 
-## Building
+      // min: Whether or not to use the minified version of the polyfill
+      //      Only applicable if using the default `src`
+      min: false,
 
-* `ember build`
+      // features: What you want to enable
+      features: [
+        // Supports a string format...
+        'Intl',
 
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+        // ...and an object format
+        { name: 'Array.prototype.find', always: false, gated: true }
+      ],
+
+      // excludes: features to leave out
+      exludes: [
+        'Array.prototype.contains'
+      ],
+
+      // flags: flags to add to all features
+      flags: [
+        'gated'
+      ],
+
+      // All other options just provide the value directly to the query param
+      ua: 'foo',
+      callback: 'bar',
+      unknown: 'baz',
+      rum: 0
+    }
+  };
+};
+```
+
+[polyfill-io]: https://polyfill.io/v2/docs/
+[polyfill-docs]: https://qa.polyfill.io/v2/docs/api
