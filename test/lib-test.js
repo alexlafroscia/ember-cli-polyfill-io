@@ -126,6 +126,10 @@ describe('providing flags', function() {
 });
 
 describe('literal params', function() {
+  it('URI encodes the provided parameters', function() {
+    expect(buildSrc({ ua: 'foo bar' })).to.equal(`${DA}?ua=foo%20bar`);
+  });
+
   it('can pass through the `ua` param', function() {
     expect(buildSrc({ ua: 'foo' })).to.equal(`${DA}?ua=foo`);
   });
