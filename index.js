@@ -6,10 +6,6 @@ const buildSrc = require('./lib');
 module.exports = {
   name: 'polyfill-io',
 
-  isDevelopingAddon() {
-    return true;
-  },
-
   contentFor(type, config) {
     if (type !== 'head') {
       return;
