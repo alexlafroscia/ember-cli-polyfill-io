@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-polyfill-io",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Ember CLI addon for including polyfill.io in your Ember application",
   "keywords": [
     "ember-addon",
