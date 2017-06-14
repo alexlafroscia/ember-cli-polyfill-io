@@ -54,5 +54,8 @@
   "files": [
     "index.js",
     "lib/index.js"
-  ]
+  ],
+  "dependencies": {
+    "debug": "^2.6.8"
+  }
 }
