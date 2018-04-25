@@ -51,7 +51,12 @@ module.exports = function() {
       ua: 'foo',
       callback: 'bar',
       unknown: 'baz',
-      rum: 0
+      rum: 0,
+
+      // Configure where the polyfill script will be added to the index.html file.
+      // Default is `head` ember-cli provides `head`, `head-footer`, `body` and `body-footer`
+      // FYI you need to load the polyfill before your app.js file
+      contentFor: 'body-footer'
     }
   };
 };
