@@ -7,11 +7,13 @@ module.exports = {
   name: 'polyfill-io',
 
   contentFor(type, config) {
-    if (type !== 'head') {
+    const polyfillConfig = config['polyfill-io'] || {};
+    const contentForType = polyfillConfig.contentFor || 'head';
+
+    if (type !== contentForType) {
       return;
     }
 
-    const polyfillConfig = config['polyfill-io'] || {};
     const src = buildSrc(polyfillConfig);
 
     debug(`Using script src: ${src}`);
