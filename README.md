@@ -57,5 +57,5 @@ module.exports = function() {
 };
 ```
 
-[polyfill-io]: https://polyfill.io/v2/docs/
-[polyfill-docs]: https://qa.polyfill.io/v2/docs/api
+[polyfill-io]: https://polyfill.io/v3/
+[polyfill-docs]: https://polyfill.io/v3/api/
