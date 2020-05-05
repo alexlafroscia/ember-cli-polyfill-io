@@ -1,6 +1,6 @@
 # ember-cli-polyfill-io
 
-[![Build Status](https://travis-ci.org/alexlafroscia/ember-cli-polyfill-io.svg?branch=master)](https://travis-ci.org/alexlafroscia/ember-cli-polyfill-io)
+![CI](https://github.com/alexlafroscia/ember-cli-polyfill-io/workflows/CI/badge.svg)
 [![npm version](https://badge.fury.io/js/ember-cli-polyfill-io.svg)](https://badge.fury.io/js/ember-cli-polyfill-io)
 
 Ember CLI addon for including [`polyfill.io`][polyfill-io] in your Ember application
