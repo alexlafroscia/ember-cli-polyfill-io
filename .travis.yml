@@ -1,4 +1,6 @@
 ---
+os: linux
+dist: xenial
 language: node_js
 node_js:
   - "6" # devDep ember-try@0.2.13 incompatible with Node 8+
@@ -12,8 +14,6 @@ jobs:
     - node_js: "10"
     - node_js: "12"
     - node_js: "14"
-
-sudo: false
 
 cache:
   yarn: true
