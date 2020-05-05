@@ -3,7 +3,7 @@
 'use strict';
 
 // Default Address
-const DA = 'https://cdn.polyfill.io/v2/polyfill.min.js';
+const DA = 'https://cdn.polyfill.io/v3/polyfill.min.js';
 
 const expect = require('chai').expect;
 const buildSrc = require('../lib');
@@ -100,7 +100,7 @@ describe('using multiple configuration options', function() {
 
 describe('using the minified file', function() {
   it('can use the un-minified file', function() {
-    expect(buildSrc({ min: false })).to.equal('https://cdn.polyfill.io/v2/polyfill.js');
+    expect(buildSrc({ min: false })).to.equal('https://cdn.polyfill.io/v3/polyfill.js');
   });
 
   it('does not interfere with providing a custom src', function() {
