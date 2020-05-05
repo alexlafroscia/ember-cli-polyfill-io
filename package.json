@@ -19,12 +19,15 @@
   "scripts": {
     "build": "ember build",
     "lint": "eslint .",
-    "test": "mocha node-tests"
+    "test": "mocha node-tests",
+    "release": "standard-version"
   },
   "dependencies": {
     "debug": "^4.1.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@ember/optional-features": "^1.3.0",
     "babel-eslint": "^10.1.0",
     "chai": "^3.5.0",
@@ -40,9 +43,11 @@
     "eslint-plugin-ember": "^8.4.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.3",
+    "husky": "^4.2.5",
     "loader.js": "^4.7.0",
     "mocha": "^3.2.0",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "standard-version": "^7.1.0"
   },
   "engines": {
     "node": "10.* || >= 12"
@@ -54,6 +59,11 @@
     "index.js",
     "lib/index.js"
   ],
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $GIT_PARAMS"
+    }
+  },
   "volta": {
     "node": "12.16.3",
     "yarn": "1.22.4"
